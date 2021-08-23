@@ -1,0 +1,7 @@
+<ng-container *ngIf="icon.type === 'fa'">
+  <i class="{{icon.value}} tech-icon" [ngStyle]="{'color': icon.color}"></i>
+</ng-container>
+
+<ng-container *ngIf="icon.type === 'img'">
+  <img class="tech-img" src='../../assets/{{icon.value}}' />
+</ng-container>

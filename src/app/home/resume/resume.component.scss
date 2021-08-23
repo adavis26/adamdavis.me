@@ -1,0 +1,39 @@
+@import '../../../styles.scss';
+
+.about-header {
+  text-align: center;
+  color: $main-color;
+}
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  font-size: calc(0.5em + 1vmin);
+}
+
+.title-mobile {
+  font-size: calc(0.25em + 1vmin);
+}
+
+.job-card {
+  width: 60%;
+  cursor: pointer;
+}
+
+.job-card:hover {
+  opacity: .8;
+}
+
+.job-list-item {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.company-img {
+  height: 25px;
+}
