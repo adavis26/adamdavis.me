@@ -1,0 +1,30 @@
+<mat-toolbar class="nav-container">
+  <div></div>
+  <ng-container *ngIf="!(isMobile$ | async); else mobileView">
+    <div class="margin-left:auto">
+      <button mat-button style="margin-left:10px;"><i class="fas fa-user icon-style"></i>About</button>
+      <button mat-button style="margin-left:10px;"><i class="fas fa-project-diagram icon-style"></i>Projects</button>
+      <button mat-button style="margin-left:10px;"><i class="fas fa-comment icon-style"></i>Contact Me</button>
+    </div>
+  </ng-container>
+</mat-toolbar>
+
+<ng-template #mobileView>
+  <button [matMenuTriggerFor]="menu" mat-icon-button class="nav-mobile-icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>dialpad</mat-icon>
+      <span>About me</span>
+    </button>
+    <button mat-menu-item disabled>
+      <mat-icon>voicemail</mat-icon>
+      <span>Check voice mail</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>notifications_off</mat-icon>
+      <span>Disable alerts</span>
+    </button>
+  </mat-menu>
+</ng-template>

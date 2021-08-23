@@ -1,0 +1,65 @@
+@import '../../../styles.scss';
+
+$fade-in-name: 2s;
+$fade-in-description: 2s;
+
+.container {
+  padding-top: 1.5vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 2vw;
+}
+
+.name-container {
+  text-align: center;
+  margin-top: 10vh;
+}
+
+.subname {
+  text-align: left;
+  font-weight: 100;
+  margin: 0;
+  font-size: calc(0.6em + 1vmin);
+}
+
+.description {
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: 100;
+  font-size: calc(0.5em + 1vmin);
+  margin-top: 2.5vw;
+}
+
+.name {
+  font-size: calc(4em + 1vmin);
+  color: $main-color;
+  font-weight: 100;
+  margin-top: 2.5vw;
+  font-weight: 900;
+}
+
+.contacts {
+  display: flex;
+  justify-content: center;
+  margin-top: 10vh;
+
+  div {
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+
+    a {
+      font-size: 22px;
+      text-decoration: none;
+      color: $secondary-color !important;
+    }
+  }
+
+  mat-icon {
+    vertical-align: text-bottom;
+    font-size: 18px;
+    height: 18px;
+    color: $main-color;
+  }
+}
