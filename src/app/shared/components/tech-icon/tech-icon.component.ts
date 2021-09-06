@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ITech } from 'src/app/home/dev/dev.component';
 
 @Component({
   // tslint:disable-next-line: component-selector

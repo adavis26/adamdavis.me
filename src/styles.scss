@@ -1,23 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
-@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
-@import "custom-theme.scss";
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import 'custom-theme.scss';
 * {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
-@import "@fortawesome/fontawesome-free/css/all.css";
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import '@fortawesome/fontawesome-free/css/all.css';
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import '~animate.css/animate.min';
 html,
 body {
   height: 100%;
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  color: #211F40;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  color: #211f40;
 }
 
 // $main-color: rgb(41, 46, 90);
-$main-color: #253BCA;
+$main-color: #253bca;
 $secondary-color: #dd4559;
 $third-color: #59dd45;
 
@@ -37,6 +38,15 @@ img {
   margin-top: 10vw;
 }
 
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.tech-info-sheet {
+  height: 60%;
+}

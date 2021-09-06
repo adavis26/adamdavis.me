@@ -1,24 +1,25 @@
-<div style="height: 100%; padding: 5%">
-
-  <mat-grid-list cols="{{cols}}" rowHeight="fit" style="height: 100%; width: 100%;">
-
+<div style="padding: 5%; text-align: center; margin-top: 100px;" id="dev">
+  <h2 data-aos="flip-up" class="title">
+    Experience
+  </h2>
+  <p color="secondary">These are the technologies I use on a daily bases. Click one to find out more </p>
+  <mat-grid-list cols="{{cols}}" rowHeight="fit" style="width: 100%;"
+    [style.height.px]="(isMobile$ | async) ? 1200 : 700  " gutterSize="20px">
     <ng-container *ngFor="let devList of devLists; index as i;">
       <mat-grid-tile style="height: calc(100vh - 24px)">
-        <mat-card style="width: 70%" data-aos="fade-in">
+        <mat-card style="width: 70%; overflow: visible !important;" data-aos="fade-in">
           <mat-card-title style="font-size:1em">
             {{devList.type | titlecase}}
           </mat-card-title>
           <mat-card-content>
             <mat-list>
               <mat-list-item *ngFor="let tech of devList.list" (click)="openInfoSheet(tech)">
-                <tech-icon [icon]="tech.icon"></tech-icon> {{tech.technology}}
+                <tech-icon [icon]="tech.icon"></tech-icon> <span class="tech-item">{{tech.technology}}</span>
               </mat-list-item>
             </mat-list>
           </mat-card-content>
         </mat-card>
-
       </mat-grid-tile>
-
     </ng-container>
   </mat-grid-list>
 </div>

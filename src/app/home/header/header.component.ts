@@ -11,15 +11,26 @@ import { ContactsService } from '../../shared/services/contacts.service';
 export class HeaderComponent implements OnInit {
   public links: ILink[];
   public windowHeight = window.innerHeight - 100;
+  public showScrollHelp = true;
+  public timeout = true;
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.windowHeight = event.target.innerHeight - 100;
   }
 
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll() {
+    this.showScrollHelp = false;
+  }
+
   constructor(cs: ContactsService) {
     this.links = cs.getLinks();
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    setTimeout(() => {
+      this.timeout = false;
+    }, 2000);
+  }
 }
