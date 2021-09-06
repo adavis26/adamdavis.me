@@ -25,13 +25,17 @@ export class TechnologyService {
         type: 'developer tools',
         list: this.developerTools(),
       },
+      {
+        type: 'methodologies',
+        list: this.methodologies()
+      }
     ];
   }
 
   public programmingList(): ITech[] {
     return [
       {
-        technology: 'Typescript',
+        technology: 'TypeScript',
         skill: 'proficient',
         icon: {
           type: 'img',
@@ -50,31 +54,60 @@ export class TechnologyService {
         },
       },
       {
+        technology: 'JavaScript',
+        skill: 'proficient',
+        icon: {
+          type: 'img',
+          value: 'js.svg',
+        },
+        info: {
+          description: `This is the langueage I use the most with both work and personal projects.`,
+          tags: [
+            'Angular',
+            'Nest',
+            'Jest',
+            'Microsoft Playwright',
+            'RxJs',
+            'NgRx',
+          ],
+        },
+      },
+      {
         technology: 'Python',
         skill: 'proficient',
         icon: {
-          type: 'fa',
-          value: 'fab fa-python',
-          color: '#3470A0',
+          type: 'img',
+          value: 'python.svg',
         },
         info: {
           description: ``,
           tags: [],
         },
       },
-      {
-        technology: 'PHP',
-        skill: 'proficient',
-        icon: {
-          type: 'fa',
-          value: 'fab fa-php',
-          color: '#868EB8',
-        },
-        info: {
-          description: ``,
-          tags: ['Laravel'],
-        },
-      },
+      // {
+      //   technology: 'PHP',
+      //   skill: 'proficient',
+      //   icon: {
+      //     type: 'img',
+      //     value: 'php.svg',
+      //   },
+      //   info: {
+      //     description: ``,
+      //     tags: ['Laravel'],
+      //   },
+      // },
+      // {
+      //   technology: 'Java',
+      //   skill: 'proficient',
+      //   icon: {
+      //     type: 'img',
+      //     value: 'java.svg',
+      //   },
+      //   info: {
+      //     description: ``,
+      //     tags: ['Laravel'],
+      //   },
+      // }
     ];
   }
 
@@ -201,6 +234,47 @@ export class TechnologyService {
           tags: ['Docker Swarm', 'Docker Compose'],
         },
       },
+    ];
+  }
+
+  public methodologies(): ITech[] {
+    return [
+      {
+        technology: 'CI/CD',
+        skill: 'proficient',
+        icon: {
+          type: 'mat',
+          value: 'change_circle',
+        },
+        info: {
+          description: ``,
+          tags: ['Bamboo', 'Bitbucket'],
+        },
+      },
+      {
+        technology: 'Agile Scrum',
+        skill: 'proficient',
+        icon: {
+          type: 'mat',
+          value: 'groups',
+        },
+        info: {
+          description: ``,
+          tags: ['', ''],
+        },
+      },
+      // {
+      //   technology: 'Jira',
+      //   skill: 'proficient',
+      //   icon: {
+      //     type: 'img',
+      //     value: 'jira.svg',
+      //   },
+      //   info: {
+      //     description: ``,
+      //     tags: ['Docker Swarm', 'Docker Compose'],
+      //   },
+      // },
     ];
   }
 }

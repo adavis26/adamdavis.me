@@ -5,3 +5,9 @@
 <ng-container *ngIf="icon.type === 'img'">
   <img class="tech-img" src='../../assets/{{icon.value}}' />
 </ng-container>
+
+<ng-container *ngIf="icon.type === 'mat'">
+  <div class="tech-mat">
+    <mat-icon>{{icon.value}}</mat-icon>  
+  </div>
+</ng-container>
