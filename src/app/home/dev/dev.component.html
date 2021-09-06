@@ -2,11 +2,12 @@
   <h2 data-aos="flip-up" class="title">
     Experience
   </h2>
-  <p color="secondary">These are the technologies I use on a daily bases. Click one to find out more </p>
-  <mat-grid-list cols="{{cols}}" rowHeight="fit" style="width: 100%;"
-    [style.height.px]="(isMobile$ | async) ? 1200 : 700  " gutterSize="20px">
+  <p color="secondary" data-aos="fade-in">These are the technologies I use on a daily bases. Click one to find out more
+  </p>
+  <mat-grid-list cols="{{cols}}" style="width: 100%;" [style.height.px]="(isMobile$ | async) ? 1340 : 900  "
+    rowHeight="fit">
     <ng-container *ngFor="let devList of devLists; index as i;">
-      <mat-grid-tile style="height: calc(100vh - 24px)">
+      <mat-grid-tile>
         <mat-card style="width: 70%; overflow: visible !important;" data-aos="fade-in">
           <mat-card-title style="font-size:1em">
             {{devList.type | titlecase}}

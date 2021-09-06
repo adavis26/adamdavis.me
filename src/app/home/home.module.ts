@@ -27,6 +27,7 @@ import { ProjectsComponent } from './projects/projects.component';
     HeaderComponent,
     ResumeComponent,
     HomeComponent,
+    ProjectsComponent,
   ],
 })
 export class HomeModule {}

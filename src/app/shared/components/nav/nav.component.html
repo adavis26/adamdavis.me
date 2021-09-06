@@ -2,8 +2,13 @@
   <div></div>
   <ng-container *ngIf="!(isMobile$ | async); else mobileView">
     <div class="margin-left:auto">
-      <button (click)="scrollTo('resume')" mat-button style="margin-left:10px;"><i class="fas fa-user icon-style"></i>Work</button>
-      <button (click)="scrollTo('dev')" mat-button style="margin-left:10px;"><i class="fas fa-comment icon-style"></i>Experience</button>
+      <button (click)="scrollTo('resume')" mat-button style="margin-left:10px;"><i
+          class="fas fa-user icon-style"></i>Work</button>
+      <button (click)="scrollTo('dev')" mat-button style="margin-left:10px;"><i
+          class="fas fa-comment icon-style"></i>Experience</button>
+      <button (click)="scrollTo('projects')" mat-button style="margin-left:10px;">
+        <mat-icon style="height: 18px; font-size: 18px; color: #253bca; margin-right: 4px;">handyman</mat-icon>Projects
+      </button>
     </div>
   </ng-container>
 </mat-toolbar>

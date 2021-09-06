@@ -27,8 +27,8 @@ export class TechnologyService {
       },
       {
         type: 'methodologies',
-        list: this.methodologies()
-      }
+        list: this.methodologies(),
+      },
     ];
   }
 
@@ -61,15 +61,8 @@ export class TechnologyService {
           value: 'js.svg',
         },
         info: {
-          description: `This is the langueage I use the most with both work and personal projects.`,
-          tags: [
-            'Angular',
-            'Nest',
-            'Jest',
-            'Microsoft Playwright',
-            'RxJs',
-            'NgRx',
-          ],
+          description: `Work with `,
+          tags: ['ES6', 'NodeJS', 'JQuery', 'Express'],
         },
       },
       {
@@ -80,8 +73,9 @@ export class TechnologyService {
           value: 'python.svg',
         },
         info: {
-          description: ``,
-          tags: [],
+          description: `This was the primary language I learned and used in school. 
+          It is my preferred language for data projects. I occasionally use this at work now.`,
+          tags: ['NLTK'],
         },
       },
       // {
@@ -107,7 +101,7 @@ export class TechnologyService {
       //     description: ``,
       //     tags: ['Laravel'],
       //   },
-      // }
+      // },
     ];
   }
 

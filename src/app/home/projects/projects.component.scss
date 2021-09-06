@@ -1,15 +1,22 @@
+@import '../../../styles.scss';
+
 .container {
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
 
+.title {
+  color: $main-color;
+}
+
 .coming-soon-container {
-  border-style: dashed;
-  border-width: 2px;
-  border-color: lightgray;
+  // border-style: dashed;
+  // border-width: 2px;
+  // border-color: lightgray;
   border-radius: 20px;
-  margin: 30px;
+  margin-left: 20%;
+  margin-right: 20%;
   padding: 20px;
-  width: 50%;
+  margin-top: 20px;
 }
