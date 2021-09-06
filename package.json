@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod",
+    "serve": "node server.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -33,6 +34,7 @@
     "angular-material": "^1.1.21",
     "animate.css": "^4.1.1",
     "aos": "^3.0.0-beta.6",
+    "express": "^4.17.1",
     "font-awesome": "^4.7.0",
     "rxjs": "^6.6.7",
     "tslib": "^2.0.0",
