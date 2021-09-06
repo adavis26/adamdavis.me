@@ -27,7 +27,7 @@ export class ResumeComponent implements OnInit {
       company: 'Epsilon Data Management, LLC',
       companyImg: 'epsilon.png',
       start: 'June 2020',
-      end: 'Now',
+      end: `Now - ${new Date().getFullYear()}`,
       description: [
         `Full Stack Engineer delivering production software focused on automation. Maintain cloud infrastructure that powers internal platform and revenue critical tooling.`,
         `Work directly with internal business stakeholders to gather feedback and plan tool enhancements. Ensure great user experience on front end tools with robust backend services.`,
@@ -66,4 +66,3 @@ export class ResumeComponent implements OnInit {
     }
   }
 }
-

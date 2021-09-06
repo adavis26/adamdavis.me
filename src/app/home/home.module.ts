@@ -8,6 +8,7 @@ import { HomeComponent } from './home.component';
 import { MatModule } from '../mat.module';
 import { SharedModule } from '../shared/shared.module';
 import { DevInfoComponent } from './dev/dev-info/dev-info.component';
+import { ProjectsComponent } from './projects/projects.component';
 
 @NgModule({
   imports: [CommonModule, MatModule, SharedModule],
@@ -18,6 +19,7 @@ import { DevInfoComponent } from './dev/dev-info/dev-info.component';
     ResumeComponent,
     HomeComponent,
     DevInfoComponent,
+    ProjectsComponent,
   ],
   exports: [
     AboutComponent,
