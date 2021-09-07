@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build --prod",
     "heroku-postbuild": "ng build --prod",
-    "serve": "node server.js",
+    "serve": "ng serve",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
