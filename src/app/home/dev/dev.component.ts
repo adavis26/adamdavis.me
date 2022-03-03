@@ -5,7 +5,6 @@ import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { Observable } from 'rxjs';
 import { TechnologyService } from 'src/app/shared/services/technology.service';
 import { StateFacade } from 'src/app/state/state.facade';
-import { DevInfoComponent } from './dev-info/dev-info.component';
 
 export interface ITech {
   technology: string;
@@ -34,20 +33,12 @@ export class DevComponent implements OnInit {
 
   constructor(
     public breakpointObserver: BreakpointObserver,
-    private readonly _infoSheet: MatBottomSheet,
+    // private readonly _infoSheet: MatBottomSheet,
     private readonly tecnologyService: TechnologyService,
     private readonly stateFacade: StateFacade
   ) {
     this.initBreakpointObserver();
     this.devLists = this.tecnologyService.getTechnologies();
-  }
-
-  public openInfoSheet(tech) {
-    this._infoSheet.open(DevInfoComponent, {
-      scrollStrategy: new NoopScrollStrategy(),
-      data: tech,
-      panelClass: 'tech-info-sheet'
-    });
   }
 
   ngOnInit() {}
@@ -64,4 +55,5 @@ export class DevComponent implements OnInit {
         }
       });
   }
+
 }

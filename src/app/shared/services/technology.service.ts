@@ -73,8 +73,10 @@ export class TechnologyService {
           value: 'python.svg',
         },
         info: {
-          description: `This was the primary language I learned and used in school. 
-          It is my preferred language for data projects. I occasionally use this at work now.`,
+          description: `
+          This was the primary language I learned and used in school. 
+          It is my preferred language for data projects. I occasionally use this at work now.
+          `,
           tags: ['NLTK'],
         },
       },

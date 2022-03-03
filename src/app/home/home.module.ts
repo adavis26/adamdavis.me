@@ -7,7 +7,6 @@ import { ResumeComponent } from './resume/resume.component';
 import { HomeComponent } from './home.component';
 import { MatModule } from '../mat.module';
 import { SharedModule } from '../shared/shared.module';
-import { DevInfoComponent } from './dev/dev-info/dev-info.component';
 import { ProjectsComponent } from './projects/projects.component';
 
 @NgModule({
@@ -18,7 +17,6 @@ import { ProjectsComponent } from './projects/projects.component';
     HeaderComponent,
     ResumeComponent,
     HomeComponent,
-    DevInfoComponent,
     ProjectsComponent,
   ],
   exports: [
