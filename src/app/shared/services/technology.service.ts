@@ -14,12 +14,12 @@ export class TechnologyService {
         list: this.programmingList(),
       },
       {
-        type: 'data',
-        list: this.dataList(),
-      },
-      {
         type: 'infrastructure',
         list: this.infrastructureList(),
+      },
+      {
+        type: 'database',
+        list: this.dataList(),
       },
       {
         type: 'developer tools',
@@ -35,75 +35,87 @@ export class TechnologyService {
   public programmingList(): ITech[] {
     return [
       {
-        technology: 'TypeScript',
-        skill: 'proficient',
+        technology: 'TypeScript (JavaScript)',
+        skill: 3,
         icon: {
           type: 'img',
           value: 'ts.svg',
         },
         info: {
-          description: `This is the langueage I use the most with both work and personal projects.`,
+          description: `Most used language for work and side projects`,
           tags: [
             'Angular',
-            'Nest',
+            'NestJS',
+            'NodeJS',
             'Jest',
-            'Microsoft Playwright',
-            'RxJs',
-            'NgRx',
+            'Redux',
+            'JQuery',
+            'Express',
           ],
         },
       },
-      {
-        technology: 'JavaScript',
-        skill: 'proficient',
-        icon: {
-          type: 'img',
-          value: 'js.svg',
-        },
-        info: {
-          description: `Work with `,
-          tags: ['ES6', 'NodeJS', 'JQuery', 'Express'],
-        },
-      },
+      // {
+      //   technology: 'JavaScript',
+      //   skill: 'proficient',
+      //   icon: {
+      //     type: 'img',
+      //     value: 'js.svg',
+      //   },
+      //   info: {
+      //     description: ``,
+      //     tags: ['ES6', 'NodeJS', 'JQuery', 'Express'],
+      //   },
+      // },
       {
         technology: 'Python',
-        skill: 'proficient',
+        skill: 2,
         icon: {
           type: 'img',
           value: 'python.svg',
         },
         info: {
-          description: `
-          This was the primary language I learned and used in school. 
-          It is my preferred language for data projects. I occasionally use this at work now.
-          `,
-          tags: ['NLTK'],
+          description: ``,
+          tags: ['Django', 'NLTK'],
         },
       },
-      // {
-      //   technology: 'PHP',
-      //   skill: 'proficient',
-      //   icon: {
-      //     type: 'img',
-      //     value: 'php.svg',
-      //   },
-      //   info: {
-      //     description: ``,
-      //     tags: ['Laravel'],
-      //   },
-      // },
-      // {
-      //   technology: 'Java',
-      //   skill: 'proficient',
-      //   icon: {
-      //     type: 'img',
-      //     value: 'java.svg',
-      //   },
-      //   info: {
-      //     description: ``,
-      //     tags: ['Laravel'],
-      //   },
-      // },
+      {
+        technology: 'Go',
+        skill: 1,
+        icon: {
+          type: 'img',
+          value: 'golang.svg',
+        },
+        info: {
+          description: `
+          I've been enjoying go lately for CLI and server side tasks. 
+          `,
+          tags: ['CLI'],
+        },
+      },
+      {
+        technology: 'PHP',
+        skill: 2,
+        icon: {
+          type: 'img',
+          value: 'php.svg',
+        },
+        info: {
+          description: ``,
+          tags: ['Laravel'],
+        },
+      },
+      {
+        technology: 'Java',
+        skill: 1,
+        icon: {
+          type: 'img',
+          value: 'java.svg',
+        },
+        info: {
+          description: ``,
+          tags: ['Spring'],
+        },
+      },
     ];
   }
 
@@ -111,7 +123,7 @@ export class TechnologyService {
     return [
       {
         technology: 'SQL',
-        skill: 'proficient',
+        skill: 3,
         icon: {
           type: 'fa',
           value: 'fas fa-database',
@@ -124,7 +136,7 @@ export class TechnologyService {
       },
       {
         technology: 'Redis',
-        skill: 'working knowledge',
+        skill: 2,
         icon: {
           type: 'img',
           value: 'redis.svg',
@@ -136,7 +148,7 @@ export class TechnologyService {
       },
       {
         technology: 'MongoDB',
-        skill: 'working knowledge',
+        skill: 1,
         icon: {
           type: 'fa',
           value: 'fab fa-envira',
@@ -154,7 +166,7 @@ export class TechnologyService {
     return [
       {
         technology: 'Docker',
-        skill: 'proficient',
+        skill: 3,
         icon: {
           type: 'fa',
           value: 'fab fa-docker',
@@ -167,7 +179,7 @@ export class TechnologyService {
       },
       {
         technology: 'Linux',
-        skill: 'working knowledge',
+        skill: 2,
         icon: {
           type: 'img',
           value: 'linux.png',
@@ -179,7 +191,7 @@ export class TechnologyService {
       },
       {
         technology: 'NGINX',
-        skill: 'working knowledge',
+        skill: 2,
         icon: {
           type: 'img',
           value: 'nginx.png',
@@ -196,7 +208,7 @@ export class TechnologyService {
     return [
       {
         technology: 'Git',
-        skill: 'proficient',
+        skill:3,
         icon: {
           type: 'img',
           value: 'git.svg',
@@ -208,7 +220,7 @@ export class TechnologyService {
       },
       {
         technology: 'Elastic Stack',
-        skill: 'proficient',
+        skill: 3,
         icon: {
           type: 'img',
           value: 'elastic.svg',
@@ -220,7 +232,7 @@ export class TechnologyService {
       },
       {
         technology: 'Jira',
-        skill: 'proficient',
+        skill: 3,
         icon: {
           type: 'img',
           value: 'jira.svg',
@@ -237,7 +249,7 @@ export class TechnologyService {
     return [
       {
         technology: 'CI/CD',
-        skill: 'proficient',
+        skill: 3,
         icon: {
           type: 'mat',
           value: 'change_circle',
@@ -249,7 +261,7 @@ export class TechnologyService {
       },
       {
         technology: 'Agile Scrum',
-        skill: 'proficient',
+        skill: 3,
         icon: {
           type: 'mat',
           value: 'groups',
@@ -259,18 +271,6 @@ export class TechnologyService {
           tags: ['', ''],
         },
       },
-      // {
-      //   technology: 'Jira',
-      //   skill: 'proficient',
-      //   icon: {
-      //     type: 'img',
-      //     value: 'jira.svg',
-      //   },
-      //   info: {
-      //     description: ``,
-      //     tags: ['Docker Swarm', 'Docker Compose'],
-      //   },
-      // },
     ];
   }
 }

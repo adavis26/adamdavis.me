@@ -8,7 +8,7 @@ import { StateFacade } from 'src/app/state/state.facade';
 
 export interface ITech {
   technology: string;
-  skill: string;
+  skill: number;
   icon: {
     type: string;
     value: string;
@@ -31,14 +31,18 @@ export class DevComponent implements OnInit {
   public devLists: { type: string; list: ITech[] }[];
   public isMobile$: Observable<boolean> = this.stateFacade.isMobile$;
 
+  public showTech = false;
+  openClose: any[];
+
   constructor(
     public breakpointObserver: BreakpointObserver,
-    // private readonly _infoSheet: MatBottomSheet,
     private readonly tecnologyService: TechnologyService,
     private readonly stateFacade: StateFacade
   ) {
     this.initBreakpointObserver();
     this.devLists = this.tecnologyService.getTechnologies();
+    this.openClose = new Array(this.devLists.length);
+    this.openClose.fill(false);
   }
 
   ngOnInit() {}
@@ -56,4 +60,7 @@ export class DevComponent implements OnInit {
       });
   }
 
+  public toggleShowTech() {
+    this.showTech = !this.showTech;
+  }
 }
