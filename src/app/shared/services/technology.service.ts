@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ITech } from 'src/app/home/dev/dev.component';
+import * as fsort from 'fast-sort';
 
 @Injectable({
   providedIn: 'root',
@@ -22,27 +23,23 @@ export class TechnologyService {
         list: this.dataList(),
       },
       {
-        type: 'developer tools',
+        type: 'developer',
         list: this.developerTools(),
-      },
-      {
-        type: 'methodologies',
-        list: this.methodologies(),
       },
     ];
   }
 
   public programmingList(): ITech[] {
-    return [
+    return fsort.sort([
       {
-        technology: 'TypeScript (JavaScript)',
+        technology: 'TypeScript',
         skill: 3,
         icon: {
           type: 'img',
           value: 'ts.svg',
         },
         info: {
-          description: `Most used language for work and side projects`,
+          description: `Most used language for work and side projects. (Of course JS too)`,
           tags: [
             'Angular',
             'NestJS',
@@ -54,18 +51,18 @@ export class TechnologyService {
           ],
         },
       },
-      // {
-      //   technology: 'JavaScript',
-      //   skill: 'proficient',
-      //   icon: {
-      //     type: 'img',
-      //     value: 'js.svg',
-      //   },
-      //   info: {
-      //     description: ``,
-      //     tags: ['ES6', 'NodeJS', 'JQuery', 'Express'],
-      //   },
-      // },
+      {
+        technology: 'JavaScript',
+        skill: 3,
+        icon: {
+          type: 'img',
+          value: 'js.svg',
+        },
+        info: {
+          description: ``,
+          tags: ['ES6', 'NodeJS', 'JQuery', 'Express'],
+        },
+      },
       {
         technology: 'Python',
         skill: 2,
@@ -74,8 +71,8 @@ export class TechnologyService {
           value: 'python.svg',
         },
         info: {
-          description: ``,
-          tags: ['Django', 'NLTK'],
+          description: `First lanugage I learned. Quick and easy.`,
+          tags: ['Django', 'Pandas'],
         },
       },
       {
@@ -86,9 +83,7 @@ export class TechnologyService {
           value: 'golang.svg',
         },
         info: {
-          description: `
-          I've been enjoying go lately for CLI and server side tasks. 
-          `,
+          description: `I've been enjoying go lately for CLI and server side tasks.`,
           tags: ['CLI'],
         },
       },
@@ -100,7 +95,7 @@ export class TechnologyService {
           value: 'php.svg',
         },
         info: {
-          description: ``,
+          description: `Server side web. Using less and less lately.`,
           tags: ['Laravel'],
         },
       },
@@ -112,11 +107,11 @@ export class TechnologyService {
           value: 'java.svg',
         },
         info: {
-          description: ``,
-          tags: ['Spring'],
+          description: `Used in school and taught it. Haven't used much since.`,
+          tags: ['JavaFX'],
         },
       },
-    ];
+    ]).desc(tech => tech.skill);
   }
 
   public dataList(): ITech[] {
@@ -142,8 +137,8 @@ export class TechnologyService {
           value: 'redis.svg',
         },
         info: {
-          description: ``,
-          tags: [],
+          description: `A quick key store db. Very powerful when used correctly.`,
+          tags: ['Caching', 'Pub/Sub'],
         },
       },
       {
@@ -155,7 +150,7 @@ export class TechnologyService {
           color: '#4CA73E',
         },
         info: {
-          description: ``,
+          description: `NoSQL, new to it. Interested in using more. `,
           tags: [],
         },
       },
@@ -173,7 +168,7 @@ export class TechnologyService {
           color: '#2491E6',
         },
         info: {
-          description: ``,
+          description: `Container orchestration at scale.`,
           tags: ['Docker Swarm', 'Docker Compose'],
         },
       },
@@ -185,8 +180,8 @@ export class TechnologyService {
           value: 'linux.png',
         },
         info: {
-          description: ``,
-          tags: [],
+          description: `Hosted Linux environments.`,
+          tags: ['Red Hat', 'Ubuntu', 'CentOS'],
         },
       },
       {
@@ -201,6 +196,18 @@ export class TechnologyService {
           tags: [],
         },
       },
+      {
+        technology: 'Traefik',
+        skill: 1,
+        icon: {
+          type: 'img',
+          value: 'traefik.svg',
+        },
+        info: {
+          description: ``,
+          tags: [],
+        },
+      },
     ];
   }
 
@@ -208,14 +215,14 @@ export class TechnologyService {
     return [
       {
         technology: 'Git',
-        skill:3,
+        skill: 3,
         icon: {
           type: 'img',
           value: 'git.svg',
         },
         info: {
-          description: ``,
-          tags: ['Docker Swarm', 'Docker Compose'],
+          description: `Version control across many projects.`,
+          tags: ['Gitflow'],
         },
       },
       {
@@ -231,23 +238,6 @@ export class TechnologyService {
         },
       },
       {
-        technology: 'Jira',
-        skill: 3,
-        icon: {
-          type: 'img',
-          value: 'jira.svg',
-        },
-        info: {
-          description: ``,
-          tags: ['Docker Swarm', 'Docker Compose'],
-        },
-      },
-    ];
-  }
-
-  public methodologies(): ITech[] {
-    return [
-      {
         technology: 'CI/CD',
         skill: 3,
         icon: {
@@ -255,7 +245,7 @@ export class TechnologyService {
           value: 'change_circle',
         },
         info: {
-          description: ``,
+          description: `Continuous Integration and Deployment. Ship code faster. `,
           tags: ['Bamboo', 'Bitbucket'],
         },
       },
@@ -267,8 +257,20 @@ export class TechnologyService {
           value: 'groups',
         },
         info: {
-          description: ``,
-          tags: ['', ''],
+          description: `Developing software in sprints with daily stands.`,
+          tags: ['Kanban', 'Sprints'],
+        },
+      },
+      {
+        technology: 'UX Design',
+        skill: 3,
+        icon: {
+          type: 'mat',
+          value: 'palette',
+        },
+        info: {
+          description: `Mocking designs prior to creation with user experience focus. `,
+          tags: ['Wire Framing'],
         },
       },
     ];

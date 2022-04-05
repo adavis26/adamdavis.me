@@ -10,9 +10,6 @@
   }
 }
 
-.title {
-  color: $main-color;
-}
 
 .mat-expansion-panel-header-description {
   display: flex;
@@ -57,6 +54,7 @@
   cursor: pointer;
   background: -webkit-linear-gradient(red, $main-color);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 
   mat-icon {
