@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ITech } from 'src/app/home/dev/dev.component';
+import * as fsort from 'fast-sort';
 
 @Injectable({
   providedIn: 'root',
@@ -14,102 +15,110 @@ export class TechnologyService {
         list: this.programmingList(),
       },
       {
-        type: 'data',
-        list: this.dataList(),
-      },
-      {
         type: 'infrastructure',
         list: this.infrastructureList(),
       },
       {
-        type: 'developer tools',
-        list: this.developerTools(),
+        type: 'database',
+        list: this.dataList(),
       },
       {
-        type: 'methodologies',
-        list: this.methodologies(),
+        type: 'developer',
+        list: this.developerTools(),
       },
     ];
   }
 
   public programmingList(): ITech[] {
-    return [
+    return fsort.sort([
       {
         technology: 'TypeScript',
-        skill: 'proficient',
+        skill: 3,
         icon: {
           type: 'img',
           value: 'ts.svg',
         },
         info: {
-          description: `This is the langueage I use the most with both work and personal projects.`,
+          description: `Most used language for work and side projects. (Of course JS too)`,
           tags: [
             'Angular',
-            'Nest',
+            'NestJS',
+            'NodeJS',
             'Jest',
-            'Microsoft Playwright',
-            'RxJs',
-            'NgRx',
+            'Redux',
+            'JQuery',
+            'Express',
           ],
         },
       },
       {
         technology: 'JavaScript',
-        skill: 'proficient',
+        skill: 3,
         icon: {
           type: 'img',
           value: 'js.svg',
         },
         info: {
-          description: `Work with `,
+          description: ``,
           tags: ['ES6', 'NodeJS', 'JQuery', 'Express'],
         },
       },
       {
         technology: 'Python',
-        skill: 'proficient',
+        skill: 2,
         icon: {
           type: 'img',
           value: 'python.svg',
         },
         info: {
-          description: `This was the primary language I learned and used in school. 
-          It is my preferred language for data projects. I occasionally use this at work now.`,
-          tags: ['NLTK'],
+          description: `First lanugage I learned. Quick and easy.`,
+          tags: ['Django', 'Pandas'],
         },
       },
-      // {
-      //   technology: 'PHP',
-      //   skill: 'proficient',
-      //   icon: {
-      //     type: 'img',
-      //     value: 'php.svg',
-      //   },
-      //   info: {
-      //     description: ``,
-      //     tags: ['Laravel'],
-      //   },
-      // },
-      // {
-      //   technology: 'Java',
-      //   skill: 'proficient',
-      //   icon: {
-      //     type: 'img',
-      //     value: 'java.svg',
-      //   },
-      //   info: {
-      //     description: ``,
-      //     tags: ['Laravel'],
-      //   },
-      // },
-    ];
+      {
+        technology: 'Go',
+        skill: 1,
+        icon: {
+          type: 'img',
+          value: 'golang.svg',
+        },
+        info: {
+          description: `I've been enjoying go lately for CLI and server side tasks.`,
+          tags: ['CLI'],
+        },
+      },
+      {
+        technology: 'PHP',
+        skill: 2,
+        icon: {
+          type: 'img',
+          value: 'php.svg',
+        },
+        info: {
+          description: `Server side web. Using less and less lately.`,
+          tags: ['Laravel'],
+        },
+      },
+      {
+        technology: 'Java',
+        skill: 1,
+        icon: {
+          type: 'img',
+          value: 'java.svg',
+        },
+        info: {
+          description: `Used in school and taught it. Haven't used much since.`,
+          tags: ['JavaFX'],
+        },
+      },
+    ]).desc(tech => tech.skill);
   }
 
   public dataList(): ITech[] {
     return [
       {
         technology: 'SQL',
-        skill: 'proficient',
+        skill: 3,
         icon: {
           type: 'fa',
           value: 'fas fa-database',
@@ -122,26 +131,26 @@ export class TechnologyService {
       },
       {
         technology: 'Redis',
-        skill: 'working knowledge',
+        skill: 2,
         icon: {
           type: 'img',
           value: 'redis.svg',
         },
         info: {
-          description: ``,
-          tags: [],
+          description: `A quick key store db. Very powerful when used correctly.`,
+          tags: ['Caching', 'Pub/Sub'],
         },
       },
       {
         technology: 'MongoDB',
-        skill: 'working knowledge',
+        skill: 1,
         icon: {
           type: 'fa',
           value: 'fab fa-envira',
           color: '#4CA73E',
         },
         info: {
-          description: ``,
+          description: `NoSQL, new to it. Interested in using more. `,
           tags: [],
         },
       },
@@ -152,23 +161,35 @@ export class TechnologyService {
     return [
       {
         technology: 'Docker',
-        skill: 'proficient',
+        skill: 3,
         icon: {
           type: 'fa',
           value: 'fab fa-docker',
           color: '#2491E6',
         },
         info: {
-          description: ``,
+          description: `Container orchestration at scale.`,
           tags: ['Docker Swarm', 'Docker Compose'],
         },
       },
       {
         technology: 'Linux',
-        skill: 'working knowledge',
+        skill: 2,
         icon: {
           type: 'img',
           value: 'linux.png',
+        },
+        info: {
+          description: `Hosted Linux environments.`,
+          tags: ['Red Hat', 'Ubuntu', 'CentOS'],
+        },
+      },
+      {
+        technology: 'NGINX',
+        skill: 2,
+        icon: {
+          type: 'img',
+          value: 'nginx.png',
         },
         info: {
           description: ``,
@@ -176,11 +197,11 @@ export class TechnologyService {
         },
       },
       {
-        technology: 'NGINX',
-        skill: 'working knowledge',
+        technology: 'Traefik',
+        skill: 1,
         icon: {
           type: 'img',
-          value: 'nginx.png',
+          value: 'traefik.svg',
         },
         info: {
           description: ``,
@@ -194,19 +215,19 @@ export class TechnologyService {
     return [
       {
         technology: 'Git',
-        skill: 'proficient',
+        skill: 3,
         icon: {
           type: 'img',
           value: 'git.svg',
         },
         info: {
-          description: ``,
-          tags: ['Docker Swarm', 'Docker Compose'],
+          description: `Version control across many projects.`,
+          tags: ['Gitflow'],
         },
       },
       {
         technology: 'Elastic Stack',
-        skill: 'proficient',
+        skill: 3,
         icon: {
           type: 'img',
           value: 'elastic.svg',
@@ -217,58 +238,41 @@ export class TechnologyService {
         },
       },
       {
-        technology: 'Jira',
-        skill: 'proficient',
-        icon: {
-          type: 'img',
-          value: 'jira.svg',
-        },
-        info: {
-          description: ``,
-          tags: ['Docker Swarm', 'Docker Compose'],
-        },
-      },
-    ];
-  }
-
-  public methodologies(): ITech[] {
-    return [
-      {
         technology: 'CI/CD',
-        skill: 'proficient',
+        skill: 3,
         icon: {
           type: 'mat',
           value: 'change_circle',
         },
         info: {
-          description: ``,
+          description: `Continuous Integration and Deployment. Ship code faster. `,
           tags: ['Bamboo', 'Bitbucket'],
         },
       },
       {
         technology: 'Agile Scrum',
-        skill: 'proficient',
+        skill: 3,
         icon: {
           type: 'mat',
           value: 'groups',
         },
         info: {
-          description: ``,
-          tags: ['', ''],
+          description: `Developing software in sprints with daily stands.`,
+          tags: ['Kanban', 'Sprints'],
         },
       },
-      // {
-      //   technology: 'Jira',
-      //   skill: 'proficient',
-      //   icon: {
-      //     type: 'img',
-      //     value: 'jira.svg',
-      //   },
-      //   info: {
-      //     description: ``,
-      //     tags: ['Docker Swarm', 'Docker Compose'],
-      //   },
-      // },
+      {
+        technology: 'UX Design',
+        skill: 3,
+        icon: {
+          type: 'mat',
+          value: 'palette',
+        },
+        info: {
+          description: `Mocking designs prior to creation with user experience focus. `,
+          tags: ['Wire Framing'],
+        },
+      },
     ];
   }
 }

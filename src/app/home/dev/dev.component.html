@@ -1,26 +1,54 @@
-<div style="padding: 5%; text-align: center; margin-top: 100px;" id="dev">
+<div style="padding: 5%; text-align: center; margin-top: 100px; margin-bottom: 100px;" id="dev">
   <h2 data-aos="flip-up" class="title">
-    Experience
+    Technical Skills
   </h2>
-  <p color="secondary" data-aos="fade-in">These are the technologies I use on a daily bases. Click one to find out more
+  <p color="secondary" class="subtext" data-aos="fade-in">These are the technologies and methods I have experience with.
+    Click to find out more.
   </p>
-  <mat-grid-list cols="{{cols}}" style="width: 100%;" [style.height.px]="(isMobile$ | async) ? 1340 : 900  "
-    rowHeight="fit">
-    <ng-container *ngFor="let devList of devLists; index as i;">
-      <mat-grid-tile>
-        <mat-card style="width: 70%; overflow: visible !important;" data-aos="fade-in">
-          <mat-card-title style="font-size:1em">
-            {{devList.type | titlecase}}
-          </mat-card-title>
-          <mat-card-content>
-            <mat-list>
-              <mat-list-item *ngFor="let tech of devList.list" (click)="openInfoSheet(tech)">
-                <tech-icon [icon]="tech.icon"></tech-icon> <span class="tech-item">{{tech.technology}}</span>
-              </mat-list-item>
-            </mat-list>
-          </mat-card-content>
-        </mat-card>
-      </mat-grid-tile>
-    </ng-container>
-  </mat-grid-list>
+
+  <div *ngIf="!showTech; else techs" style="display: flex; justify-content: center;">
+    <div (click)="toggleShowTech()" class="expand-btn mat-elevation-z2">
+      <span>show more</span>
+      <mat-icon style="vertical-align: middle;">expand_more</mat-icon>
+    </div>
+  </div>
 </div>
+
+<ng-template #techs>
+
+  <div style="display: grid; justify-items:center; margin-top: 50px;"
+    [style.grid-template-columns]="(isMobile$ | async) ? '1fr' : '1fr 1fr'">
+    <div *ngFor="let devList of devLists; index as i;" style="width: 80%; margin-bottom: 30px;">
+
+      <h4>{{devList.type | titlecase}}</h4>
+
+      <mat-accordion data-aos="fade-in">
+        <mat-expansion-panel hideToggle *ngFor="let tech of devList.list">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <tech-icon [icon]="tech.icon"></tech-icon> <span class="tech-item">{{tech.technology}}</span>
+            </mat-panel-title>
+            <mat-panel-description>
+              <span *ngFor="let i of tech.skill | iterateNTimes" style="font-size: 32px;">•</span>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div>
+            <p style="text-align: left;">{{tech.info.description}}</p>
+            <mat-chip-list>
+              <mat-chip *ngFor="let tag of tech.info.tags">{{tag}}</mat-chip>
+            </mat-chip-list>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+
+  <div style="display: flex; justify-content: center;">
+    <div class="expand-btn mat-elevation-z2" (click)="toggleShowTech()">
+      <span>hide</span>
+      <mat-icon style="vertical-align: middle;">expand_less</mat-icon>
+    </div>
+  </div>
+
+
+</ng-template>

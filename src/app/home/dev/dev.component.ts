@@ -5,11 +5,10 @@ import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { Observable } from 'rxjs';
 import { TechnologyService } from 'src/app/shared/services/technology.service';
 import { StateFacade } from 'src/app/state/state.facade';
-import { DevInfoComponent } from './dev-info/dev-info.component';
 
 export interface ITech {
   technology: string;
-  skill: string;
+  skill: number;
   icon: {
     type: string;
     value: string;
@@ -32,22 +31,18 @@ export class DevComponent implements OnInit {
   public devLists: { type: string; list: ITech[] }[];
   public isMobile$: Observable<boolean> = this.stateFacade.isMobile$;
 
+  public showTech = false;
+  openClose: any[];
+
   constructor(
     public breakpointObserver: BreakpointObserver,
-    private readonly _infoSheet: MatBottomSheet,
     private readonly tecnologyService: TechnologyService,
     private readonly stateFacade: StateFacade
   ) {
     this.initBreakpointObserver();
     this.devLists = this.tecnologyService.getTechnologies();
-  }
-
-  public openInfoSheet(tech) {
-    this._infoSheet.open(DevInfoComponent, {
-      scrollStrategy: new NoopScrollStrategy(),
-      data: tech,
-      panelClass: 'tech-info-sheet'
-    });
+    this.openClose = new Array(this.devLists.length);
+    this.openClose.fill(false);
   }
 
   ngOnInit() {}
@@ -63,5 +58,9 @@ export class DevComponent implements OnInit {
           this.cols = 1;
         }
       });
+  }
+
+  public toggleShowTech() {
+    this.showTech = !this.showTech;
   }
 }

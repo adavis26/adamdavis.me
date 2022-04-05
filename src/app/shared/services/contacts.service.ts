@@ -24,7 +24,7 @@ export class ContactsService {
       {
         key: 'github',
         title: 'Github',
-        link: '',
+        link: 'https://github.com/adavis26',
         icon: 'code'
       }
     ];

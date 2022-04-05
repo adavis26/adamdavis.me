@@ -1,5 +1,5 @@
 <div style="width: 100%; text-align: center;" id="resume">
-  <h2 style="justify-content: center;" data-aos="flip-up">
+  <h2 style="justify-content: center;" class="title" data-aos="flip-up">
     Work
   </h2>
 </div>
@@ -19,7 +19,8 @@
         </div>
       </div>
       <mat-card class="job-card" data-aos="fade-in" (click)="toggleDescription(i)">
-        <mat-card-title style="display: flex; justify-content: space-between;"><span class="title">{{job.title}}</span>
+        <mat-card-title style="display: flex; justify-content: space-between;"><span
+            class="job-title">{{job.title}}</span>
           <img src="../../assets/{{job.companyImg}}" class="company-img">
         </mat-card-title>
         <mat-card-subtitle style="display: flex; justify-content: space-between; margin-top: 4px;">
@@ -29,7 +30,7 @@
           <div *ngIf="expandList.includes(i)">
             <ul>
               <li *ngFor="let description of job.description"
-                style="padding-bottom: 1.5vw; list-style-type:none; font-size: calc(0.5em + 1vmin);">
+                style="padding-bottom: 1.5vw; list-style-type:none; font-size: calc(0.5em + 1vmin);" class="subtext">
                 {{description}}</li>
             </ul>
           </div>

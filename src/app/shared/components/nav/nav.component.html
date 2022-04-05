@@ -5,7 +5,7 @@
       <button (click)="scrollTo('resume')" mat-button style="margin-left:10px;"><i
           class="fas fa-user icon-style"></i>Work</button>
       <button (click)="scrollTo('dev')" mat-button style="margin-left:10px;"><i
-          class="fas fa-comment icon-style"></i>Experience</button>
+          class="fas fa-comment icon-style"></i>Skills</button>
       <button (click)="scrollTo('projects')" mat-button style="margin-left:10px;">
         <mat-icon style="height: 18px; font-size: 18px; color: #253bca; margin-right: 4px;">handyman</mat-icon>Projects
       </button>
@@ -18,11 +18,10 @@
     <mat-icon>menu</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <button (click)="scrollTo('resume')" mat-menu-item>
-      <span>Work</span>
-    </button>
+    <button (click)="scrollTo('resume')" mat-button style="margin-left:10px;"><i
+      class="fas fa-user icon-style"></i>Work</button>
     <button (click)="scrollTo('dev')" mat-menu-item>
-      <span>Experience</span>
+      <span>Skills</span>
     </button>
   </mat-menu>
 </ng-template>
