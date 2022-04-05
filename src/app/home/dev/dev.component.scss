@@ -43,13 +43,14 @@
   justify-content: center;
   padding: 3px;
   padding-left: 8px;
+  font-size: 11px;
   span {
     margin-top: 2px;
   }
 }
 
 .expand-btn:hover {
-  transform: scale(1.25);
+  transform: scale(1.07);
   opacity: 0.9;
   cursor: pointer;
   background: -webkit-linear-gradient(red, $main-color);
