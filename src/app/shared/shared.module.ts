@@ -7,6 +7,7 @@ import { TechIconComponent } from './components/tech-icon/tech-icon.component';
 import { NavComponent } from './components/nav/nav.component';
 import { MatModule } from '../mat.module';
 import { FooterComponent } from './components/footer/footer.component';
+import { IterateNTimesPipe } from './pipes/iterate-n-times.pipe';
 
 @NgModule({
   declarations: [
@@ -14,9 +15,16 @@ import { FooterComponent } from './components/footer/footer.component';
     TechIconComponent,
     NavComponent,
     FooterComponent,
+    IterateNTimesPipe,
   ],
   imports: [CommonModule, MatModule],
   providers: [ContactsService, LoadingResolver],
-  exports: [LoaderComponent, TechIconComponent, NavComponent, FooterComponent],
+  exports: [
+    LoaderComponent,
+    TechIconComponent,
+    NavComponent,
+    FooterComponent,
+    IterateNTimesPipe,
+  ],
 })
 export class SharedModule {}

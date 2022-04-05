@@ -19,8 +19,8 @@ body {
 
 // $main-color: rgb(41, 46, 90);
 $main-color: #253bca;
-$secondary-color: #dd4559;
-$third-color: #59dd45;
+$secondary-color: #59dd45;
+$third-color: #dd4559;
 
 img {
   -khtml-user-select: none;
@@ -49,4 +49,16 @@ body {
 
 .tech-info-sheet {
   height: 60%;
+}
+
+.title {
+  color: $main-color;
+}
+
+.subtitle {
+  color: $secondary-color;
+}
+
+.subtext {
+  font-weight: 100;
 }
