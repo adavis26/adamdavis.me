@@ -117,9 +117,10 @@
       }
     }
   },
-  "defaultProject": "adamdavis",
   "cli": {
     "analytics": "db6337a1-ef29-4a89-b091-e12929f777eb",
-    "defaultCollection": "@ngrx/schematics"
+    "schematicCollections": [
+      "@ngrx/schematics"
+    ]
   }
 }
