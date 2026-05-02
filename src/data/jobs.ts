@@ -10,14 +10,14 @@ export interface IJob {
 
 export const jobs: IJob[] = [
   {
-    title: "Senior Full Stack Software Engineer",
+    title: "Senior Software Engineer",
     company: "Epsilon",
     start: DateTime.fromFormat("May 2025", "MMMM yyyy"),
     end: null,
     details: []
   },
   {
-    title: "Full Stack Software Engineer",
+    title: "Software Engineer",
     company: "Epsilon",
     start: DateTime.fromFormat("May 2022", "MMMM yyyy"),
     end: DateTime.fromFormat("May 2025", "MMMM yyyy"),
@@ -30,7 +30,7 @@ export const jobs: IJob[] = [
     ]
   },
   {
-    title: "Associate Full Stack Software Engineer",
+    title: "Associate Software Engineer",
     company: "Epsilon",
     start: DateTime.fromFormat("June 2020", "MMMM yyyy"),
     end: DateTime.fromFormat("May 2022", "MMMM yyyy"),
