@@ -15,7 +15,7 @@ const LottieFrame = dynamic(() => import('@/components/lottie'), { ssr: false })
 function Greeting() {
   return (
     <div className='flex flex-col space-y-5'>
-      <h1 className='text-5xl font-bold'>Hi, I'm Adam</h1>
+      <h1 className='text-4xl md:text-5xl font-bold'>Hi, I'm Adam</h1>
       <p className='text-lg'>
         An enthusiastic full stack software engineer building intuitive apps at scale. I am now focused on autonomous AI agents that solve complex problems for the AI-driven future. I value learning, tenacity, collaboration, and above all <span className='creativity-pill'><span>creativity</span></span>.
       </p>
@@ -79,11 +79,11 @@ export default function Home() {
   return (
     <div className="h-screen">
       <main>
-        <div className='md:mx-[10%] mx-10 py-8 space-y-20'>
+        <div className='md:mx-[10%] mx-10 py-8 space-y-10 md:space-y-20'>
           <section id="header">
             <Nav></Nav>
           </section>
-          <div className='h-[510px]'>
+          <div className='h-[350px] -translate-y-10 md:h-[510px] md:translate-y-0'>
             <LottieFrame />
           </div>
           <section id="greeting">
