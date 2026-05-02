@@ -13,10 +13,14 @@ import { LINKS } from '@/data/links';
 const LottieFrame = dynamic(() => import('@/components/lottie'), { ssr: false })
 
 function Greeting() {
-  return <div className='flex flex-col space-y-5'>
-    <h1 className='text-5xl font-bold'>Hi, I'm Adam</h1>
-    <p className='text-lg'>I'm an enthusiastic full stack software engineer that is always learning </p>
-  </div>
+  return (
+    <div className='flex flex-col space-y-5'>
+      <h1 className='text-5xl font-bold'>Hi, I'm Adam</h1>
+      <p className='text-lg'>
+        An enthusiastic full stack software engineer building intuitive apps at scale. I am now focused on autonomous AI agents that solve complex problems for the AI-driven future. I value learning, tenacity, collaboration, and above all <span className='creativity-pill'><span>creativity</span></span>.
+      </p>
+    </div>
+  )
 }
 
 function School() {
