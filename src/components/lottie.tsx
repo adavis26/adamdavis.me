@@ -13,6 +13,7 @@ export default function LottieFrame() {
 
     return <div style={{maxHeight: '800px'}} className='flex items-center justify-center'>
         <Lottie
+            style={{cursor: 'default'}}
             options={defaultOptions}
             height={500}
             width={500}
