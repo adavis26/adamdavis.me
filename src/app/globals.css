@@ -26,3 +26,120 @@
 
     /* ... */
 }
+
+@layer components {
+    @keyframes rainbowShift {
+        0% {
+            background-position: 0% center;
+        }
+
+        50% {
+            background-position: 100% center;
+        }
+
+        100% {
+            background-position: 0% center;
+        }
+    }
+
+    @keyframes pillFloat {
+        0% {
+            transform: translateY(0);
+        }
+
+        100% {
+            transform: translateY(-1px);
+        }
+    }
+
+    .creativity-pill {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.15rem 0.85rem;
+        border-radius: 9999px;
+        font-weight: 700;
+        line-height: 1;
+        isolation: isolate;
+        overflow: hidden;
+        color: #111827;
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(15, 23, 42, 0.08);
+        animation: pillFloat 7s ease-in-out infinite alternate;
+    }
+
+    .creativity-pill::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        padding: 1.5px;
+        border-radius: inherit;
+        background: linear-gradient(90deg,
+                #ff004c,
+                #ff8a00,
+                #ffe600,
+                #27d400,
+                #00c2ff,
+                #7c4dff,
+                #ff4fd8,
+                #ff004c);
+        background-size: 300% 100%;
+        animation: rainbowShift 12s linear infinite;
+        pointer-events: none;
+        -webkit-mask: linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+    }
+
+    .creativity-pill::after {
+        content: '';
+        position: absolute;
+        inset: 1px;
+        border-radius: inherit;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.42));
+        pointer-events: none;
+    }
+
+    .creativity-pill>span {
+        position: relative;
+        z-index: 1;
+        background: linear-gradient(90deg,
+                #ff004c,
+                #ff8a00,
+                #ffe600,
+                #27d400,
+                #00c2ff,
+                #7c4dff,
+                #ff4fd8,
+                #ff004c);
+        background-size: 300% 100%;
+        animation: rainbowShift 12s linear infinite;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 0 16px rgba(255, 255, 255, 0.18);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .creativity-pill {
+            color: #f8fafc;
+            background: rgba(15, 23, 42, 0.9);
+            box-shadow: 0 8px 24px rgba(2, 6, 23, 0.32), 0 0 0 1px rgba(148, 163, 184, 0.16);
+        }
+
+        .creativity-pill::after {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.03));
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+        .creativity-pill,
+        .creativity-pill::before,
+        .creativity-pill>span {
+            animation: none;
+        }
+    }
+}

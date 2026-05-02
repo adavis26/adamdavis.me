@@ -21,7 +21,7 @@ function JobDate({ date }: { date: DateTime | null }) {
 }
 
 export default function Job({ job, index }: { job: IJob, index: number }) {
-    const totalJobs = 3;
+    const totalJobs = 4;
     return <>
         <JobDate date={job.end}></JobDate>
         <div className='pl-2 border-l-2'>
