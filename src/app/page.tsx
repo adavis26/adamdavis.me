@@ -62,11 +62,13 @@ function Contact() {
 }
 
 function Footer() {
+  const year = new Date().getFullYear();
+
   return <div>
     <footer className="py-4 text-gray-400 mt-10">
       <div className="container mx-auto px-4 text-center space-y-3">
         <p className='text-xs'>v{process.env.VERSION}</p>
-        <p className="text-xs">© 2025 Adam Davis. All rights reserved.</p>
+        <p className="text-xs">© {year} Adam Davis. All rights reserved.</p>
       </div>
     </footer>
   </div>
