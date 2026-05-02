@@ -10,10 +10,17 @@ export interface IJob {
 
 export const jobs: IJob[] = [
   {
+    title: "Senior Full Stack Software Engineer",
+    company: "Epsilon",
+    start: DateTime.fromFormat("May 2025", "MMMM yyyy"),
+    end: null,
+    details: []
+  },
+  {
     title: "Full Stack Software Engineer",
     company: "Epsilon",
     start: DateTime.fromFormat("May 2022", "MMMM yyyy"),
-    end: null,
+    end: DateTime.fromFormat("May 2025", "MMMM yyyy"),
     details: [
       "Develop and maintain Epsilon’s internal automation platform, enhancing efficiency and reliability.",
       "Lead technical projects from discovery to production, producing well-tested, scalable code. Manage 10+ internal products.",
